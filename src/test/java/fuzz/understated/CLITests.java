@@ -35,7 +35,7 @@ public class CLITests {
           println("ok");
           return true;
         })
-        
+
         .addOnEntry(
             ci -> {
               println("entering ", ci.getState().name(), " ",
