@@ -1,4 +1,4 @@
-package fuzz.cli;
+package fuzz.understated;
 
 import java.util.function.Predicate;
 

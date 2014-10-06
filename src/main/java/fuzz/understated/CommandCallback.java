@@ -1,4 +1,4 @@
-package fuzz.cli;
+package fuzz.understated;
 
 /**
  * Callback interface for any invocation of commands

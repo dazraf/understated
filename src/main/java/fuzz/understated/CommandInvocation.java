@@ -1,4 +1,4 @@
-package fuzz.cli;
+package fuzz.understated;
 
 public class CommandInvocation<TState> {
   private TState state;

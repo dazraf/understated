@@ -1,4 +1,4 @@
-package fuzz.cli;
+package fuzz.understated;
 
 public interface CommandStateMachine<TState> {
 

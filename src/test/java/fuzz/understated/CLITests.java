@@ -1,10 +1,15 @@
-package fuzz.cli;
+package fuzz.understated;
 
 import static org.junit.Assert.*;
 
 import java.util.concurrent.atomic.AtomicInteger;
+
 import org.junit.Before;
 import org.junit.Test;
+
+import fuzz.understated.CommandInvocation;
+import fuzz.understated.CommandStateMachine;
+import fuzz.understated.CommandStateMachineBuilder;
 
 public class CLITests {
 
