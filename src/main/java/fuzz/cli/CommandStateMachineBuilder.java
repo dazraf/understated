@@ -38,7 +38,7 @@ public class CommandStateMachineBuilder<TState> {
 	    return this;
 	}
 
-	public StateConfiguration addOnLeave(CommandCallback<TState> callback) {
+	public StateConfiguration addOnExit(CommandCallback<TState> callback) {
 	    onLeaveCallbacks.add(callback);
 	    return this;
 	}
@@ -167,6 +167,6 @@ public class CommandStateMachineBuilder<TState> {
 		sm.fire(triggerWithParams, command, null);
 	    }
 
-	};
-    }
+    };
+  }
 }

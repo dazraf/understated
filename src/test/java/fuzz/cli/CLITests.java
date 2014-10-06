@@ -30,6 +30,7 @@ public class CLITests {
           println("ok");
           return true;
         })
+        
         .addOnEntry(
             ci -> {
               println("entering ", ci.getState().name(), " ",
@@ -85,7 +86,7 @@ public class CLITests {
 
   private CommandStateMachineBuilder<States> getBuilder() {
     CommandStateMachineBuilder<States> smb = CommandStateMachine
-        .<States> builder(States.AppNotLoggedIn);
+        .builder(States.AppNotLoggedIn);
     return smb;
   }
 
