@@ -15,6 +15,8 @@ import com.github.oxo42.stateless4j.transitions.Transition;
 import com.github.oxo42.stateless4j.triggers.TriggerWithParameters2;
 
 public class CommandStateMachineBuilder<TState> {
+  private final Predicate<CommandInvocation<TState>> truePredicate = Predicates.truePredicate(); 
+  
   private final Map<TState, StateConfiguration> configurations = new HashMap<>();
   private final TState initialState;
 
@@ -23,6 +25,7 @@ public class CommandStateMachineBuilder<TState> {
   };
 
   public class StateConfiguration {
+    
     private final List<CommandCallback<TState>> onEntryCallbacks = new LinkedList<>();
     private final List<CommandCallback<TState>> onLeaveCallbacks = new LinkedList<>();
     private final Map<String, CommandBinding<TState>> commands = new HashMap<>();
@@ -43,6 +46,11 @@ public class CommandStateMachineBuilder<TState> {
       return this;
     }
 
+    public StateConfiguration addCommand(String command, TState state) {
+      commands.put(command, new CommandBinding<>(command, state, truePredicate));
+      return this;
+    }
+    
     public StateConfiguration addCommand(String command, TState state,
         Predicate<CommandInvocation<TState>> check) {
       commands.put(command, new CommandBinding<>(command, state, check));
